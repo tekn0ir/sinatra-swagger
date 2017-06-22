@@ -8,7 +8,7 @@ module Sinatra
         app.register Sinatra::MultiRoute
         app.register Swagger::SwaggerLinked
 
-        app.route 'SPEC', '/' do
+        app.get 'SPEC', '/' do
           content_type "text/vnd.swagger.v2+yaml; charset=utf-8"
           YAML.dump(settings.swagger.spec)
         end
